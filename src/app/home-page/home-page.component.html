@@ -339,5 +339,48 @@
       </div>
     </section>
     <!--/body-->
+    <!-- STart of MORE PAGES -->
+    
+    <div class="container">
+      <h1>More Fundraisers</h1>
+      <div class="row row-cols-3">
+        <div class="col" *ngFor="let campaigns of campaignsList">
+          <div class="page">
+            <a href="/donate-form-page">
+              <div class="imgcover">
+                <img
+                src="{{campaigns.imageURL}}"
+                alt="image"
+                class="pagecvrimg"
+                />
+              </div>
+              <div class="page_content">
+                <div class="titleinfo">
+                  <div class="title">{{campaigns.title}}</div>
+                  <div class="info">
+                    {{campaigns.description}}
+                  </div>
+                </div>
+            </div>
+            <div>
+              <div style="width: 80%; text-align: left; float: left">
+                <b>$200 raised</b>
+              </div>
+              <div style="text-align: right; width: 20%; float: right">
+                <b>15%</b>
+              </div>
+            </div>
+            <div class="page_footer">
+              <progress class="progress_bar" value=".8"></progress>
+              <i style="font-size: 1so2px" class="fa"
+              >&#xf017; {{campaigns.days}} days left</i
+              >
+            </div>
+          </a>
+        </div>
+      </div>
+      </div>
+    </div>
   </body>
-</html>
+  </html>
+  

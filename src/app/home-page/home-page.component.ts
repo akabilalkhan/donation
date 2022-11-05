@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Campaign } from '../model/campaign';
+import { CampaignService } from '../shared/campain.service';
 
 
 
@@ -10,9 +12,27 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private campaign : CampaignService) { }
 
   ngOnInit(): void {
+    this.getAllCampaigns();
+  }
+
+  campaignsList: Campaign [] = [];
+
+  getAllCampaigns() {
+    this.campaign.getAllCampaigns().subscribe(res => {
+
+      this.campaignsList = res.map((e: any) => {
+        const data = e.payload.doc.data();
+        data.id = e.payload.doc.id;
+        return data;
+      })
+
+    }, err => {
+      alert('Error while fetching student data');   
+    })
+
   }
 
   customOptions: OwlOptions = {

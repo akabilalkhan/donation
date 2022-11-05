@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { registerLocaleData } from '@angular/common';
 import { AuthService } from 'src/app/shared/auth.service';
+import { User } from '../model/user';
+import { UserService } from '../shared/user.service';
 
 
 
@@ -14,23 +16,53 @@ import { AuthService } from 'src/app/shared/auth.service';
   styleUrls: ['./signup-page.component.css']
 })
 export class SignupPageComponent implements OnInit {
-  email! : string;
-  password!: string;
+
 
   public signupForm !: FormGroup;
-  constructor(private auth : AuthService) { }
+
+  User: User[] = [];
+  UserObject: User = {
+    first_name: '',
+    email: '',
+    last_name: '',
+    password: ''
+  };
+  first_name: string = '';
+  last_name: string = '';
+  email! : string;
+  password!: string;
+  constructor(private auth : AuthService, private UserData : UserService) { }
 
 
   
   ngOnInit(): void {
   }
 
+
+  resetForm() {
+    this.first_name = '';
+    this.last_name = '';
+    this.email = '';
+    this.password = '';
+  }
+
+  addUsers() {
+    if (this.first_name == '' || this.last_name == '' || this.password == '' || this.email == '') {
+      alert('Fill all input fields');
+      return;
+    }
+
+    this.UserObject.email = this.email;
+    this.UserObject.first_name = this.first_name;
+    this.UserObject.last_name = this.last_name;
+    this.UserObject.password = this.password;
+
+    this.UserData.addUser(this.UserObject);
+    this.resetForm();
+
+  }
+
   register() {
-
-    console.log(this.email)
-    console.log(this.password)
-
-
     if(this.email == '') {
       alert('please enter email');
       return;
@@ -42,9 +74,6 @@ export class SignupPageComponent implements OnInit {
     }
 
     this.auth.register(this.email,this.password);
-    
-    this.email = '';
-    this.password = '';
-
+    this.addUsers();
   }
 }

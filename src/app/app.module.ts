@@ -16,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AngularFireModule} from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
-import {CardsComponent} from './cards/cards.component'
+import {CardsComponent} from './cards/cards.component';
+import { CreateCampaignComponent } from './create-campaign/create-campaign.component'
 
 
 
@@ -28,7 +29,8 @@ import {CardsComponent} from './cards/cards.component'
     HomePageComponent,
     IndividualFundraiserPageComponent,
     DonateFormPageComponent,
-    CardsComponent
+    CardsComponent,
+    CreateCampaignComponent
   ],
   imports: [
     BrowserModule,
