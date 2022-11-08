@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang= "en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <title> donate me </title>
+    <link rel="stylesheet" href="donate-form-page.component.css">
+</head>
+<body>
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                    <img src = "http://localhost:4200/assets/donate logo.jpg"width = "100%" class="ProductImg"> 
+                <div class = "small-img-row">
+                    <div class="small-img-col">
+                        <img src="http://localhost:4200/assets/fundrasing logo.jpg" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="http://localhost:4200/assets/Fundraising-Tree.jpg" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="http://localhost:4200/assets/Fundraising-Ideas.jpg"  width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="http://localhost:4200/assets/donate logo.jpg" width="100%" class="small-img">
+                    </div>
+                </div>
+            </div>
+        <div class="col-2">
+            <p> Pick for Donation </p>
+            <h1> Donate here </h1>>
+            <h4> $1.00 </h4>
+            <select>
+                <option> Select Ammount </option>
+                <option> $5.00  </option>
+                <option> $15.00  </option>
+                <option> $20.00  </option>
+                <option> $50.00  </option>
+                <option> $100.00  </option>
+            </select>
+            <input type="number" value="1">
+            <a class="btn" href="/individual-fundrasier-page"> Donate</a>
+            
+            <h3> Fundrasing Details<i class = "fa fa-indent"></i>
+            </h3>
+            <br>
+            <p> With the help of you donation poor students can go to School.
+                You money will help them learn and one day they will thank you for all of this help. 
+                You donations will be very beneficial.
+            </p>
+        </div>
+        </div>
+    </div> 
+    <script>
+        var ProductImg = document.getElementById("ProductImg");
+        var SmallImg = document.getElementByIdClassName("small-img");
+        SmallImg[0].onclick = function()
+        {
+            ProductImg.src = SmallImg[0].src;
+        }
+        SmallImg[1].onclick = function()
+        {
+            ProductImg.src = SmallImg[0].src;
+        }
+        SmallImg[2].onclick = function()
+        {
+            ProductImg.src = SmallImg[0].src;
+        }
+        SmallImg[3].onclick = function()
+        {
+            ProductImg.src = SmallImg[0].src;
+        }
+
+    </script> 
+
+</body>
