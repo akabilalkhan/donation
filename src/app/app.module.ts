@@ -18,6 +18,7 @@ import {AngularFireModule} from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
 import {CardsComponent} from './cards/cards.component';
 import { CreateCampaignComponent } from './create-campaign/create-campaign.component'
+import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 
 
 
@@ -30,7 +31,8 @@ import { CreateCampaignComponent } from './create-campaign/create-campaign.compo
     IndividualFundraiserPageComponent,
     DonateFormPageComponent,
     CardsComponent,
-    CreateCampaignComponent
+    CreateCampaignComponent,
+    EmployeeDashboardComponent
   ],
   imports: [
     BrowserModule,

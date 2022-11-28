@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/shared/auth.service';
 import { User } from '../model/user';
 import { UserService } from '../shared/user.service';
 
-
+export { User }
 
 @Component({
   selector: 'app-signup-page',

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Campaign } from '../model/campaign';
+import { AuthService } from '../shared/auth.service';
 import { CampaignService } from '../shared/campain.service';
 
 
@@ -10,7 +12,11 @@ import { CampaignService } from '../shared/campain.service';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
+
+
+
 export class HomePageComponent implements OnInit {
+[x: string]: any;
 
   constructor(private campaign : CampaignService) { }
 
